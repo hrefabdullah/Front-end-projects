@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Assets/macos-monterey-stock-black-dark-mode-layers-5k-6016x6016-5889.jpg);
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo{
+    font-size: 2em;
+    color: white;
+}
+
+nav a{
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.btnlogin{
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1em;
+    margin-left: 40px;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.btnlogin:hover{
+    background-color: #fff;
+    color: rgb(15, 15, 15);
+}
+
+
+.wrapper{
+    position: relative;
+    top: 20px;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 0.3s;   
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.wrapper.active{
+    height: 540px;
+}
+
+.wrapper .form-register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper .form-login{
+    transition: transform 0.2s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper.active .form-register{
+    transition: 0.2s;
+    transform: translateX(0);
+}
+
+.wrapper.remove{
+    height: 440px;
+}
+
+.wrapper.remove .form-login{
+    transition: 0.3s ease;
+    transform: translateX(0);
+}
+
+.wrapper.remove .form-register{
+    transition: 0.3s ease;
+    transform: translateX(0);
+}
+
+.wrapper.popup{
+    transition: 0.2s ease;
+    transform: scale(1);
+}
+
+
+.closebtn{
+    background-color: transparent;
+    color: #fff;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+}
+
+.closebtn:hover{
+    background-color: white;
+    color: rgb(15, 15, 15);
+
+}
+
+.wrapper form{
+    width: 100%;
+    padding: 40px;
+    color: white;
+}
+
+.wrapper h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.inputbox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 40px 0;
+}
+
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 0 35px 0 5px;
+}
+
+.inputbox label{
+    position: relative;
+    bottom: 40px;
+    pointer-events: none;
+    transition: 0.3s ;
+    transform: scale(1.1);
+}
+
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    bottom: 70px;
+    transform : scale(0.7);
+}
+
+.inputbox span{
+    position: absolute;
+    right: 8px;
+    top: 10px;
+}
+
+.remember-forget a{
+    /* text-decoration: none; */
+    color: grey;
+}
+
+.remember-forget{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    font-size: 0.8em;
+    position: relative;
+    bottom: 25px;
+    width: 100%; 
+    transform: scale(0.95);
+    
+}
+
+.btn-submit{
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    height: 35px;
+    background: white;
+    color: rgb(15, 15, 15);
+    outline: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.login-register{
+    position: absolute;
+    font-size: 0.7em;
+    color: white;
+}
+
+.login-register a{
+    color: grey;
+}
+
+.form-register .agree-subscribe{
+    display: flex;
+    flex-direction: column ;
+    position: relative;
+    bottom: 22px;
+    font-size: 12px;
+}
+
